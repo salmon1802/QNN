@@ -1,0 +1,163 @@
+2024-12-07 15:44:03,178 P590173 INFO Params: {
+    "batch_norm": "True",
+    "batch_size": "10000",
+    "data_format": "csv",
+    "data_root": "../../../data/",
+    "dataset_id": "Tenrec_x1",
+    "debug_mode": "False",
+    "early_stop_patience": "2",
+    "embedding_dim": "16",
+    "embedding_regularizer": "1e-05",
+    "epochs": "100",
+    "eval_steps": "None",
+    "feature_cols": "[{'active': True, 'dtype': 'str', 'name': ['user_id', 'item_id', 'video_category', 'gender', 'age', 'hist_1', 'hist_2', 'hist_3', 'hist_4', 'hist_5', 'hist_6', 'hist_7', 'hist_8', 'hist_9', 'hist_10'], 'type': 'categorical'}]",
+    "feature_config": "None",
+    "feature_specs": "None",
+    "gpu": "2",
+    "group_id": "None",
+    "label_col": "{'dtype': 'float', 'name': 'click'}",
+    "learning_rate": "0.001",
+    "loss": "binary_crossentropy",
+    "metrics": "['logloss', 'AUC']",
+    "min_categr_count": "10",
+    "model": "QNN_T26",
+    "model_id": "QNN_T26_Tenrec_004_b2a8cbb2",
+    "model_root": "./checkpoints/",
+    "monitor": "{'AUC': 1, 'logloss': 0}",
+    "monitor_mode": "max",
+    "net_dropout": "0.1",
+    "net_regularizer": "0",
+    "num_heads": "1",
+    "num_layers": "2",
+    "num_row": "10",
+    "num_workers": "8",
+    "optimizer": "adam",
+    "pickle_feature_encoder": "True",
+    "save_best_only": "True",
+    "seed": "2024",
+    "shuffle": "True",
+    "task": "binary_classification",
+    "test_data": "../../../data/Tenrec/test.csv",
+    "train_data": "../../../data/Tenrec/train.csv",
+    "use_features": "None",
+    "valid_data": "../../../data/Tenrec/valid.csv",
+    "verbose": "1"
+}
+2024-12-07 15:44:03,178 P590173 INFO Set up feature processor...
+2024-12-07 15:44:03,179 P590173 WARNING Skip rebuilding ../../../data/Tenrec_x1/feature_map.json. Please delete it manually if rebuilding is required.
+2024-12-07 15:44:03,179 P590173 INFO Load feature_map from json: ../../../data/Tenrec_x1/feature_map.json
+2024-12-07 15:44:03,179 P590173 INFO Set column index...
+2024-12-07 15:44:03,179 P590173 INFO Feature specs: {
+    "age": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 9, 'vocab_size': 10}",
+    "gender": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 4, 'vocab_size': 5}",
+    "hist_1": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 180796, 'vocab_size': 180797}",
+    "hist_10": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 184254, 'vocab_size': 184255}",
+    "hist_2": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 183259, 'vocab_size': 183260}",
+    "hist_3": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 186988, 'vocab_size': 186989}",
+    "hist_4": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 189620, 'vocab_size': 189621}",
+    "hist_5": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 190967, 'vocab_size': 190968}",
+    "hist_6": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 190902, 'vocab_size': 190903}",
+    "hist_7": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 189867, 'vocab_size': 189868}",
+    "hist_8": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 188694, 'vocab_size': 188695}",
+    "hist_9": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 186489, 'vocab_size': 186490}",
+    "item_id": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 561089, 'vocab_size': 561090}",
+    "user_id": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 972039, 'vocab_size': 972040}",
+    "video_category": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 4, 'vocab_size': 5}"
+}
+2024-12-07 15:44:07,053 P590173 INFO Total number of parameters: 55646577.
+2024-12-07 15:44:07,054 P590173 INFO Loading data...
+2024-12-07 15:44:07,054 P590173 INFO Loading data from h5: ../../../data/Tenrec_x1/train.h5
+2024-12-07 15:44:33,436 P590173 INFO Train samples: total/96273844, blocks/1
+2024-12-07 15:44:33,436 P590173 INFO Loading data from h5: ../../../data/Tenrec_x1/valid.h5
+2024-12-07 15:44:36,541 P590173 INFO Validation samples: total/12034231, blocks/1
+2024-12-07 15:44:36,541 P590173 INFO Loading train and validation data done.
+2024-12-07 15:44:36,541 P590173 INFO Start training: 9628 batches/epoch
+2024-12-07 15:44:36,541 P590173 INFO ************ Epoch=1 start ************
+2024-12-07 15:54:12,726 P590173 INFO Train loss: 1.419492
+2024-12-07 15:54:12,726 P590173 INFO Evaluation @epoch 1 - batch 9628: 
+2024-12-07 15:54:34,771 P590173 INFO ===
+2024-12-07 15:54:34,771 P590173 INFO [Metrics] AUC: 0.781171 - logloss: 0.453263
+2024-12-07 15:54:34,772 P590173 INFO Save best model: monitor(max)=0.781171
+2024-12-07 15:54:35,154 P590173 INFO ************ Epoch=1 end ************
+2024-12-07 16:04:21,182 P590173 INFO Train loss: 1.396384
+2024-12-07 16:04:21,182 P590173 INFO Evaluation @epoch 2 - batch 9628: 
+2024-12-07 16:04:44,051 P590173 INFO ===
+2024-12-07 16:04:44,051 P590173 INFO [Metrics] AUC: 0.782597 - logloss: 0.452004
+2024-12-07 16:04:44,052 P590173 INFO Save best model: monitor(max)=0.782597
+2024-12-07 16:04:45,930 P590173 INFO ************ Epoch=2 end ************
+2024-12-07 16:14:26,466 P590173 INFO Train loss: 1.394138
+2024-12-07 16:14:26,466 P590173 INFO Evaluation @epoch 3 - batch 9628: 
+2024-12-07 16:14:49,514 P590173 INFO ===
+2024-12-07 16:14:49,514 P590173 INFO [Metrics] AUC: 0.783060 - logloss: 0.451580
+2024-12-07 16:14:49,515 P590173 INFO Save best model: monitor(max)=0.783060
+2024-12-07 16:14:51,360 P590173 INFO ************ Epoch=3 end ************
+2024-12-07 16:24:45,154 P590173 INFO Train loss: 1.393425
+2024-12-07 16:24:45,154 P590173 INFO Evaluation @epoch 4 - batch 9628: 
+2024-12-07 16:25:08,372 P590173 INFO ===
+2024-12-07 16:25:08,372 P590173 INFO [Metrics] AUC: 0.783395 - logloss: 0.451321
+2024-12-07 16:25:08,373 P590173 INFO Save best model: monitor(max)=0.783395
+2024-12-07 16:25:10,177 P590173 INFO ************ Epoch=4 end ************
+2024-12-07 16:34:52,544 P590173 INFO Train loss: 1.393049
+2024-12-07 16:34:52,544 P590173 INFO Evaluation @epoch 5 - batch 9628: 
+2024-12-07 16:35:16,023 P590173 INFO ===
+2024-12-07 16:35:16,023 P590173 INFO [Metrics] AUC: 0.783494 - logloss: 0.451326
+2024-12-07 16:35:16,024 P590173 INFO Save best model: monitor(max)=0.783494
+2024-12-07 16:35:17,948 P590173 INFO ************ Epoch=5 end ************
+2024-12-07 16:45:02,025 P590173 INFO Train loss: 1.392850
+2024-12-07 16:45:02,026 P590173 INFO Evaluation @epoch 6 - batch 9628: 
+2024-12-07 16:45:25,241 P590173 INFO ===
+2024-12-07 16:45:25,242 P590173 INFO [Metrics] AUC: 0.783597 - logloss: 0.451193
+2024-12-07 16:45:25,242 P590173 INFO Save best model: monitor(max)=0.783597
+2024-12-07 16:45:27,103 P590173 INFO ************ Epoch=6 end ************
+2024-12-07 16:55:10,515 P590173 INFO Train loss: 1.392673
+2024-12-07 16:55:10,515 P590173 INFO Evaluation @epoch 7 - batch 9628: 
+2024-12-07 16:55:35,703 P590173 INFO ===
+2024-12-07 16:55:35,703 P590173 INFO [Metrics] AUC: 0.783539 - logloss: 0.451235
+2024-12-07 16:55:35,704 P590173 INFO Monitor(max)=0.783539 STOP!
+2024-12-07 16:55:35,704 P590173 INFO Reduce learning rate on plateau: 0.000100
+2024-12-07 16:55:35,820 P590173 INFO ************ Epoch=7 end ************
+2024-12-07 17:05:13,191 P590173 INFO Train loss: 1.333037
+2024-12-07 17:05:13,191 P590173 INFO Evaluation @epoch 8 - batch 9628: 
+2024-12-07 17:05:34,407 P590173 INFO ===
+2024-12-07 17:05:34,407 P590173 INFO [Metrics] AUC: 0.800046 - logloss: 0.438013
+2024-12-07 17:05:34,408 P590173 INFO Save best model: monitor(max)=0.800046
+2024-12-07 17:05:36,244 P590173 INFO ************ Epoch=8 end ************
+2024-12-07 17:15:16,531 P590173 INFO Train loss: 1.299218
+2024-12-07 17:15:16,532 P590173 INFO Evaluation @epoch 9 - batch 9628: 
+2024-12-07 17:15:39,605 P590173 INFO ===
+2024-12-07 17:15:39,605 P590173 INFO [Metrics] AUC: 0.803076 - logloss: 0.435485
+2024-12-07 17:15:39,606 P590173 INFO Save best model: monitor(max)=0.803076
+2024-12-07 17:15:41,426 P590173 INFO ************ Epoch=9 end ************
+2024-12-07 17:25:26,716 P590173 INFO Train loss: 1.285442
+2024-12-07 17:25:26,716 P590173 INFO Evaluation @epoch 10 - batch 9628: 
+2024-12-07 17:25:49,886 P590173 INFO ===
+2024-12-07 17:25:49,886 P590173 INFO [Metrics] AUC: 0.803684 - logloss: 0.434996
+2024-12-07 17:25:49,887 P590173 INFO Save best model: monitor(max)=0.803684
+2024-12-07 17:25:51,728 P590173 INFO ************ Epoch=10 end ************
+2024-12-07 17:35:31,626 P590173 INFO Train loss: 1.277187
+2024-12-07 17:35:31,626 P590173 INFO Evaluation @epoch 11 - batch 9628: 
+2024-12-07 17:35:56,126 P590173 INFO ===
+2024-12-07 17:35:56,126 P590173 INFO [Metrics] AUC: 0.803446 - logloss: 0.435224
+2024-12-07 17:35:56,127 P590173 INFO Monitor(max)=0.803446 STOP!
+2024-12-07 17:35:56,127 P590173 INFO Reduce learning rate on plateau: 0.000010
+2024-12-07 17:35:56,247 P590173 INFO ************ Epoch=11 end ************
+2024-12-07 17:45:36,860 P590173 INFO Train loss: 1.230105
+2024-12-07 17:45:36,861 P590173 INFO Evaluation @epoch 12 - batch 9628: 
+2024-12-07 17:46:02,403 P590173 INFO ===
+2024-12-07 17:46:02,404 P590173 INFO [Metrics] AUC: 0.801020 - logloss: 0.439252
+2024-12-07 17:46:02,405 P590173 INFO Monitor(max)=0.801020 STOP!
+2024-12-07 17:46:02,405 P590173 INFO Reduce learning rate on plateau: 0.000001
+2024-12-07 17:46:02,405 P590173 INFO ********* Epoch==12 early stop *********
+2024-12-07 17:46:02,544 P590173 INFO Training finished.
+2024-12-07 17:46:02,544 P590173 INFO Load best model: /mnt/public/lhh/code/model_zoo/QNN/QNN_torch/checkpoints/Tenrec_x1/QNN_T26_Tenrec_004_b2a8cbb2.model
+2024-12-07 17:46:02,680 P590173 INFO ****** Validation evaluation ******
+2024-12-07 17:46:26,966 P590173 INFO ===
+2024-12-07 17:46:26,967 P590173 INFO [Metrics] logloss: 0.434996 - AUC: 0.803684
+2024-12-07 17:46:27,074 P590173 INFO ******** Test evaluation ********
+2024-12-07 17:46:27,075 P590173 INFO Loading data...
+2024-12-07 17:46:27,075 P590173 INFO Loading data from h5: ../../../data/Tenrec_x1/test.h5
+2024-12-07 17:46:30,321 P590173 INFO Test samples: total/12034231, blocks/1
+2024-12-07 17:46:30,321 P590173 INFO Loading test data done.
+2024-12-07 17:46:55,238 P590173 INFO ===
+2024-12-07 17:46:55,238 P590173 INFO [Metrics] logloss: 0.434995 - AUC: 0.803578
+2024-12-07 17:49:03,481 P590173 INFO Average inference time per sample (CPU): 0.0103 ms

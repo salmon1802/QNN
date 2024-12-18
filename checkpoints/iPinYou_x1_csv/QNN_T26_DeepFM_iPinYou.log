@@ -1,0 +1,153 @@
+2024-12-12 20:00:56,533 P89941 INFO Params: {
+    "batch_norm": "True",
+    "batch_size": "4096",
+    "data_format": "csv",
+    "data_root": "../../../data/",
+    "dataset_id": "iPinYou_x1_csv",
+    "debug_mode": "False",
+    "early_stop_patience": "2",
+    "embedding_dim": "16",
+    "embedding_regularizer": "0.001",
+    "epochs": "100",
+    "eval_steps": "None",
+    "feature_cols": "[{'active': True, 'dtype': 'str', 'name': ['weekday', 'hour', 'IP', 'region', 'city', 'adexchange', 'domain', 'slotid', 'slotwidth', 'slotheight', 'slotvisibility', 'slotformat', 'creative', 'advertiser', 'useragent', 'slotprice'], 'type': 'categorical'}]",
+    "feature_config": "None",
+    "feature_specs": "None",
+    "gpu": "3",
+    "group_id": "None",
+    "hidden_units": "[400, 200, 100]",
+    "label_col": "{'dtype': 'float', 'name': 'click'}",
+    "learning_rate": "0.001",
+    "loss": "binary_crossentropy",
+    "metrics": "['logloss', 'AUC']",
+    "min_categr_count": "2",
+    "model": "QNN_T26_DeepFM",
+    "model_id": "QNN_T26_DeepFM_iPinYou",
+    "model_root": "./checkpoints/",
+    "monitor": "{'AUC': 1, 'logloss': 0}",
+    "monitor_mode": "max",
+    "net_dropout": "0.1",
+    "net_regularizer": "0",
+    "num_heads": "4",
+    "num_layers": "4",
+    "num_row": "2",
+    "num_workers": "8",
+    "optimizer": "adam",
+    "pickle_feature_encoder": "True",
+    "save_best_only": "True",
+    "seed": "2024",
+    "shuffle": "True",
+    "task": "binary_classification",
+    "test_data": "../../../data/iPinYou/test.csv",
+    "train_data": "../../../data/iPinYou/train.csv",
+    "use_features": "None",
+    "valid_data": "../../../data/iPinYou/test.csv",
+    "verbose": "1"
+}
+2024-12-12 20:00:56,535 P89941 INFO Set up feature processor...
+2024-12-12 20:00:56,535 P89941 WARNING Skip rebuilding ../../../data/iPinYou_x1_csv/feature_map.json. Please delete it manually if rebuilding is required.
+2024-12-12 20:00:56,535 P89941 INFO Load feature_map from json: ../../../data/iPinYou_x1_csv/feature_map.json
+2024-12-12 20:00:56,535 P89941 INFO Set column index...
+2024-12-12 20:00:56,535 P89941 INFO Feature specs: {
+    "IP": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 585532, 'vocab_size': 585533}",
+    "adexchange": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 6, 'vocab_size': 7}",
+    "advertiser": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 10, 'vocab_size': 11}",
+    "city": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 371, 'vocab_size': 372}",
+    "creative": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 132, 'vocab_size': 133}",
+    "domain": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 28622, 'vocab_size': 28623}",
+    "hour": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 25, 'vocab_size': 26}",
+    "region": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 36, 'vocab_size': 37}",
+    "slotformat": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 5, 'vocab_size': 6}",
+    "slotheight": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 15, 'vocab_size': 16}",
+    "slotid": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 50906, 'vocab_size': 50907}",
+    "slotprice": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 6, 'vocab_size': 7}",
+    "slotvisibility": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 12, 'vocab_size': 13}",
+    "slotwidth": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 22, 'vocab_size': 23}",
+    "useragent": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 41, 'vocab_size': 42}",
+    "weekday": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 8, 'vocab_size': 9}"
+}
+2024-12-12 20:01:00,791 P89941 INFO Total number of parameters: 11848695.
+2024-12-12 20:01:00,791 P89941 INFO Loading data...
+2024-12-12 20:01:00,791 P89941 INFO Loading data from h5: ../../../data/iPinYou_x1_csv/train.h5
+2024-12-12 20:01:04,704 P89941 INFO Train samples: total/15395258, blocks/1
+2024-12-12 20:01:04,705 P89941 INFO Loading data from h5: ../../../data/iPinYou_x1_csv/valid.h5
+2024-12-12 20:01:05,732 P89941 INFO Validation samples: total/4100716, blocks/1
+2024-12-12 20:01:05,733 P89941 INFO Loading train and validation data done.
+2024-12-12 20:01:05,733 P89941 INFO Start training: 3759 batches/epoch
+2024-12-12 20:01:05,733 P89941 INFO ************ Epoch=1 start ************
+2024-12-12 20:06:05,041 P89941 INFO Train loss: 0.025563
+2024-12-12 20:06:05,042 P89941 INFO Evaluation @epoch 1 - batch 3759: 
+2024-12-12 20:06:16,847 P89941 INFO ===
+2024-12-12 20:06:16,848 P89941 INFO [Metrics] AUC: 0.731753 - logloss: 0.005701
+2024-12-12 20:06:16,853 P89941 INFO Save best model: monitor(max)=0.731753
+2024-12-12 20:06:17,089 P89941 INFO ************ Epoch=1 end ************
+2024-12-12 20:11:20,505 P89941 INFO Train loss: 0.018337
+2024-12-12 20:11:20,506 P89941 INFO Evaluation @epoch 2 - batch 3759: 
+2024-12-12 20:11:33,318 P89941 INFO ===
+2024-12-12 20:11:33,318 P89941 INFO [Metrics] AUC: 0.744932 - logloss: 0.005679
+2024-12-12 20:11:33,323 P89941 INFO Save best model: monitor(max)=0.744932
+2024-12-12 20:11:33,769 P89941 INFO ************ Epoch=2 end ************
+2024-12-12 20:16:34,531 P89941 INFO Train loss: 0.018187
+2024-12-12 20:16:34,531 P89941 INFO Evaluation @epoch 3 - batch 3759: 
+2024-12-12 20:16:46,607 P89941 INFO ===
+2024-12-12 20:16:46,607 P89941 INFO [Metrics] AUC: 0.754385 - logloss: 0.005629
+2024-12-12 20:16:46,613 P89941 INFO Save best model: monitor(max)=0.754385
+2024-12-12 20:16:47,228 P89941 INFO ************ Epoch=3 end ************
+2024-12-12 20:21:45,075 P89941 INFO Train loss: 0.018107
+2024-12-12 20:21:45,075 P89941 INFO Evaluation @epoch 4 - batch 3759: 
+2024-12-12 20:21:56,500 P89941 INFO ===
+2024-12-12 20:21:56,501 P89941 INFO [Metrics] AUC: 0.753653 - logloss: 0.005629
+2024-12-12 20:21:56,505 P89941 INFO Monitor(max)=0.753653 STOP!
+2024-12-12 20:21:56,505 P89941 INFO Reduce learning rate on plateau: 0.000100
+2024-12-12 20:21:56,648 P89941 INFO ************ Epoch=4 end ************
+2024-12-12 20:27:29,628 P89941 INFO Train loss: 0.017459
+2024-12-12 20:27:29,629 P89941 INFO Evaluation @epoch 5 - batch 3759: 
+2024-12-12 20:27:40,570 P89941 INFO ===
+2024-12-12 20:27:40,571 P89941 INFO [Metrics] AUC: 0.779964 - logloss: 0.005553
+2024-12-12 20:27:40,576 P89941 INFO Save best model: monitor(max)=0.779964
+2024-12-12 20:27:41,078 P89941 INFO ************ Epoch=5 end ************
+2024-12-12 20:32:47,574 P89941 INFO Train loss: 0.017332
+2024-12-12 20:32:47,574 P89941 INFO Evaluation @epoch 6 - batch 3759: 
+2024-12-12 20:32:58,175 P89941 INFO ===
+2024-12-12 20:32:58,175 P89941 INFO [Metrics] AUC: 0.778842 - logloss: 0.005547
+2024-12-12 20:32:58,180 P89941 INFO Monitor(max)=0.778842 STOP!
+2024-12-12 20:32:58,180 P89941 INFO Reduce learning rate on plateau: 0.000010
+2024-12-12 20:32:58,326 P89941 INFO ************ Epoch=6 end ************
+2024-12-12 20:38:07,086 P89941 INFO Train loss: 0.017102
+2024-12-12 20:38:07,086 P89941 INFO Evaluation @epoch 7 - batch 3759: 
+2024-12-12 20:38:18,843 P89941 INFO ===
+2024-12-12 20:38:18,844 P89941 INFO [Metrics] AUC: 0.781309 - logloss: 0.005540
+2024-12-12 20:38:18,849 P89941 INFO Save best model: monitor(max)=0.781309
+2024-12-12 20:38:19,301 P89941 INFO ************ Epoch=7 end ************
+2024-12-12 20:43:44,354 P89941 INFO Train loss: 0.017052
+2024-12-12 20:43:44,355 P89941 INFO Evaluation @epoch 8 - batch 3759: 
+2024-12-12 20:43:57,142 P89941 INFO ===
+2024-12-12 20:43:57,142 P89941 INFO [Metrics] AUC: 0.782700 - logloss: 0.005533
+2024-12-12 20:43:57,152 P89941 INFO Save best model: monitor(max)=0.782700
+2024-12-12 20:43:57,738 P89941 INFO ************ Epoch=8 end ************
+2024-12-12 20:49:15,708 P89941 INFO Train loss: 0.016967
+2024-12-12 20:49:15,708 P89941 INFO Evaluation @epoch 9 - batch 3759: 
+2024-12-12 20:49:29,897 P89941 INFO ===
+2024-12-12 20:49:29,898 P89941 INFO [Metrics] AUC: 0.782540 - logloss: 0.005534
+2024-12-12 20:49:29,904 P89941 INFO Monitor(max)=0.782540 STOP!
+2024-12-12 20:49:29,904 P89941 INFO Reduce learning rate on plateau: 0.000001
+2024-12-12 20:49:30,052 P89941 INFO ************ Epoch=9 end ************
+2024-12-12 20:54:17,808 P89941 INFO Train loss: 0.016854
+2024-12-12 20:54:17,809 P89941 INFO Evaluation @epoch 10 - batch 3759: 
+2024-12-12 20:54:28,884 P89941 INFO ===
+2024-12-12 20:54:28,884 P89941 INFO [Metrics] AUC: 0.782096 - logloss: 0.005536
+2024-12-12 20:54:28,889 P89941 INFO Monitor(max)=0.782096 STOP!
+2024-12-12 20:54:28,889 P89941 INFO Reduce learning rate on plateau: 0.000001
+2024-12-12 20:54:28,889 P89941 INFO ********* Epoch==10 early stop *********
+2024-12-12 20:54:29,069 P89941 INFO Training finished.
+2024-12-12 20:54:29,069 P89941 INFO Load best model: /mnt/public/lhh/code/model_zoo/QNN/QNN_torch/checkpoints/iPinYou_x1_csv/QNN_T26_DeepFM_iPinYou.model
+2024-12-12 20:54:29,106 P89941 INFO ****** Validation evaluation ******
+2024-12-12 20:54:39,125 P89941 INFO ===
+2024-12-12 20:54:39,125 P89941 INFO [Metrics] logloss: 0.005533 - AUC: 0.782700
+2024-12-12 20:54:39,190 P89941 INFO ******** Test evaluation ********
+2024-12-12 20:54:39,190 P89941 INFO Loading data...
+2024-12-12 20:54:39,190 P89941 INFO Loading data from h5: ../../../data/iPinYou_x1_csv/test.h5
+2024-12-12 20:54:40,241 P89941 INFO Test samples: total/4100716, blocks/1
+2024-12-12 20:54:40,241 P89941 INFO Loading test data done.
+2024-12-12 20:54:50,557 P89941 INFO ===
+2024-12-12 20:54:50,557 P89941 INFO [Metrics] logloss: 0.005533 - AUC: 0.782700

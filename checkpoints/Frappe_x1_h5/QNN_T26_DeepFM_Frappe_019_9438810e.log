@@ -1,0 +1,185 @@
+2024-12-14 17:26:56,252 P1717951 INFO Params: {
+    "batch_norm": "True",
+    "batch_size": "4096",
+    "data_format": "h5",
+    "data_root": "../../../data/",
+    "dataset_id": "Frappe_x1_h5",
+    "debug_mode": "False",
+    "early_stop_patience": "2",
+    "embedding_dim": "16",
+    "embedding_regularizer": "0.1",
+    "epochs": "100",
+    "eval_steps": "None",
+    "feature_cols": "[{'active': True, 'dtype': 'float', 'name': ['user', 'item', 'daytime', 'weekday', 'isweekend', 'homework', 'cost', 'weather', 'country', 'city'], 'type': 'categorical'}]",
+    "feature_config": "None",
+    "feature_specs": "None",
+    "gpu": "3",
+    "group_id": "None",
+    "label_col": "{'dtype': 'float', 'name': 'label'}",
+    "learning_rate": "0.001",
+    "loss": "binary_crossentropy",
+    "metrics": "['logloss', 'AUC']",
+    "min_categr_count": "2",
+    "model": "QNN_T26_DeepFM",
+    "model_id": "QNN_T26_DeepFM_Frappe_019_9438810e",
+    "model_root": "./checkpoints/",
+    "monitor": "{'AUC': 1, 'logloss': 0}",
+    "monitor_mode": "max",
+    "net_dropout": "0.1",
+    "net_regularizer": "0",
+    "num_heads": "1",
+    "num_layers": "3",
+    "num_row": "8",
+    "num_workers": "8",
+    "optimizer": "adam",
+    "pickle_feature_encoder": "True",
+    "save_best_only": "True",
+    "seed": "2023",
+    "shuffle": "True",
+    "task": "binary_classification",
+    "test_data": "../../../data/Frappe_x1_h5/test.h5",
+    "train_data": "../../../data/Frappe_x1_h5/train.h5",
+    "use_features": "None",
+    "valid_data": "../../../data/Frappe_x1_h5/valid.h5",
+    "verbose": "1"
+}
+2024-12-14 17:26:56,253 P1717951 INFO Load feature_map from json: ../../../data/Frappe_x1_h5/feature_map.json
+2024-12-14 17:26:56,253 P1717951 INFO Set column index...
+2024-12-14 17:26:56,253 P1717951 INFO Feature specs: {
+    "city": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 232, 'vocab_size': 233}",
+    "cost": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 3, 'vocab_size': 4}",
+    "country": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 81, 'vocab_size': 82}",
+    "daytime": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 8, 'vocab_size': 9}",
+    "homework": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 4, 'vocab_size': 5}",
+    "isweekend": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 3, 'vocab_size': 4}",
+    "item": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 4083, 'vocab_size': 4084}",
+    "user": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 941, 'vocab_size': 942}",
+    "weather": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 10, 'vocab_size': 11}",
+    "weekday": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 8, 'vocab_size': 9}"
+}
+2024-12-14 17:27:02,007 P1717951 INFO Total number of parameters: 717593.
+2024-12-14 17:27:02,008 P1717951 INFO Loading data...
+2024-12-14 17:27:02,009 P1717951 INFO Loading data from h5: ../../../data/Frappe_x1_h5/train.h5
+2024-12-14 17:27:02,053 P1717951 INFO Train samples: total/202027, blocks/1
+2024-12-14 17:27:02,053 P1717951 INFO Loading data from h5: ../../../data/Frappe_x1_h5/valid.h5
+2024-12-14 17:27:02,062 P1717951 INFO Validation samples: total/57722, blocks/1
+2024-12-14 17:27:02,063 P1717951 INFO Loading train and validation data done.
+2024-12-14 17:27:02,063 P1717951 INFO Start training: 50 batches/epoch
+2024-12-14 17:27:02,063 P1717951 INFO ************ Epoch=1 start ************
+2024-12-14 17:27:06,198 P1717951 INFO Train loss: 1.158635
+2024-12-14 17:27:06,199 P1717951 INFO Evaluation @epoch 1 - batch 50: 
+2024-12-14 17:27:07,414 P1717951 INFO ===
+2024-12-14 17:27:07,415 P1717951 INFO [Metrics] AUC: 0.935674 - logloss: 0.314428
+2024-12-14 17:27:07,416 P1717951 INFO Save best model: monitor(max)=0.935674
+2024-12-14 17:27:07,634 P1717951 INFO ************ Epoch=1 end ************
+2024-12-14 17:27:11,668 P1717951 INFO Train loss: 0.841171
+2024-12-14 17:27:11,668 P1717951 INFO Evaluation @epoch 2 - batch 50: 
+2024-12-14 17:27:12,954 P1717951 INFO ===
+2024-12-14 17:27:12,955 P1717951 INFO [Metrics] AUC: 0.960957 - logloss: 0.224858
+2024-12-14 17:27:12,955 P1717951 INFO Save best model: monitor(max)=0.960957
+2024-12-14 17:27:13,201 P1717951 INFO ************ Epoch=2 end ************
+2024-12-14 17:27:17,274 P1717951 INFO Train loss: 0.724748
+2024-12-14 17:27:17,274 P1717951 INFO Evaluation @epoch 3 - batch 50: 
+2024-12-14 17:27:18,538 P1717951 INFO ===
+2024-12-14 17:27:18,539 P1717951 INFO [Metrics] AUC: 0.970177 - logloss: 0.198647
+2024-12-14 17:27:18,539 P1717951 INFO Save best model: monitor(max)=0.970177
+2024-12-14 17:27:18,731 P1717951 INFO ************ Epoch=3 end ************
+2024-12-14 17:27:22,823 P1717951 INFO Train loss: 0.664571
+2024-12-14 17:27:22,823 P1717951 INFO Evaluation @epoch 4 - batch 50: 
+2024-12-14 17:27:23,996 P1717951 INFO ===
+2024-12-14 17:27:23,996 P1717951 INFO [Metrics] AUC: 0.974074 - logloss: 0.183598
+2024-12-14 17:27:23,997 P1717951 INFO Save best model: monitor(max)=0.974074
+2024-12-14 17:27:24,154 P1717951 INFO ************ Epoch=4 end ************
+2024-12-14 17:27:27,589 P1717951 INFO Train loss: 0.619966
+2024-12-14 17:27:27,590 P1717951 INFO Evaluation @epoch 5 - batch 50: 
+2024-12-14 17:27:28,445 P1717951 INFO ===
+2024-12-14 17:27:28,445 P1717951 INFO [Metrics] AUC: 0.976576 - logloss: 0.174323
+2024-12-14 17:27:28,445 P1717951 INFO Save best model: monitor(max)=0.976576
+2024-12-14 17:27:28,556 P1717951 INFO ************ Epoch=5 end ************
+2024-12-14 17:27:32,054 P1717951 INFO Train loss: 0.586965
+2024-12-14 17:27:32,054 P1717951 INFO Evaluation @epoch 6 - batch 50: 
+2024-12-14 17:27:32,981 P1717951 INFO ===
+2024-12-14 17:27:32,981 P1717951 INFO [Metrics] AUC: 0.978616 - logloss: 0.165295
+2024-12-14 17:27:32,981 P1717951 INFO Save best model: monitor(max)=0.978616
+2024-12-14 17:27:33,148 P1717951 INFO ************ Epoch=6 end ************
+2024-12-14 17:27:36,713 P1717951 INFO Train loss: 0.566850
+2024-12-14 17:27:36,713 P1717951 INFO Evaluation @epoch 7 - batch 50: 
+2024-12-14 17:27:37,616 P1717951 INFO ===
+2024-12-14 17:27:37,616 P1717951 INFO [Metrics] AUC: 0.979958 - logloss: 0.160044
+2024-12-14 17:27:37,616 P1717951 INFO Save best model: monitor(max)=0.979958
+2024-12-14 17:27:37,739 P1717951 INFO ************ Epoch=7 end ************
+2024-12-14 17:27:41,475 P1717951 INFO Train loss: 0.542004
+2024-12-14 17:27:41,476 P1717951 INFO Evaluation @epoch 8 - batch 50: 
+2024-12-14 17:27:42,297 P1717951 INFO ===
+2024-12-14 17:27:42,298 P1717951 INFO [Metrics] AUC: 0.980199 - logloss: 0.156423
+2024-12-14 17:27:42,298 P1717951 INFO Save best model: monitor(max)=0.980199
+2024-12-14 17:27:42,426 P1717951 INFO ************ Epoch=8 end ************
+2024-12-14 17:27:45,989 P1717951 INFO Train loss: 0.526620
+2024-12-14 17:27:45,990 P1717951 INFO Evaluation @epoch 9 - batch 50: 
+2024-12-14 17:27:46,877 P1717951 INFO ===
+2024-12-14 17:27:46,877 P1717951 INFO [Metrics] AUC: 0.980321 - logloss: 0.157636
+2024-12-14 17:27:46,877 P1717951 INFO Save best model: monitor(max)=0.980321
+2024-12-14 17:27:47,027 P1717951 INFO ************ Epoch=9 end ************
+2024-12-14 17:27:50,667 P1717951 INFO Train loss: 0.513345
+2024-12-14 17:27:50,667 P1717951 INFO Evaluation @epoch 10 - batch 50: 
+2024-12-14 17:27:51,597 P1717951 INFO ===
+2024-12-14 17:27:51,597 P1717951 INFO [Metrics] AUC: 0.981594 - logloss: 0.150071
+2024-12-14 17:27:51,597 P1717951 INFO Save best model: monitor(max)=0.981594
+2024-12-14 17:27:51,799 P1717951 INFO ************ Epoch=10 end ************
+2024-12-14 17:27:55,958 P1717951 INFO Train loss: 0.501999
+2024-12-14 17:27:55,958 P1717951 INFO Evaluation @epoch 11 - batch 50: 
+2024-12-14 17:27:57,093 P1717951 INFO ===
+2024-12-14 17:27:57,093 P1717951 INFO [Metrics] AUC: 0.981308 - logloss: 0.149749
+2024-12-14 17:27:57,094 P1717951 INFO Monitor(max)=0.981308 STOP!
+2024-12-14 17:27:57,094 P1717951 INFO Reduce learning rate on plateau: 0.000100
+2024-12-14 17:27:57,258 P1717951 INFO ************ Epoch=11 end ************
+2024-12-14 17:28:01,442 P1717951 INFO Train loss: 0.407750
+2024-12-14 17:28:01,442 P1717951 INFO Evaluation @epoch 12 - batch 50: 
+2024-12-14 17:28:02,653 P1717951 INFO ===
+2024-12-14 17:28:02,654 P1717951 INFO [Metrics] AUC: 0.985043 - logloss: 0.135451
+2024-12-14 17:28:02,654 P1717951 INFO Save best model: monitor(max)=0.985043
+2024-12-14 17:28:02,816 P1717951 INFO ************ Epoch=12 end ************
+2024-12-14 17:28:06,951 P1717951 INFO Train loss: 0.306396
+2024-12-14 17:28:06,951 P1717951 INFO Evaluation @epoch 13 - batch 50: 
+2024-12-14 17:28:08,149 P1717951 INFO ===
+2024-12-14 17:28:08,149 P1717951 INFO [Metrics] AUC: 0.986407 - logloss: 0.131696
+2024-12-14 17:28:08,149 P1717951 INFO Save best model: monitor(max)=0.986407
+2024-12-14 17:28:08,372 P1717951 INFO ************ Epoch=13 end ************
+2024-12-14 17:28:12,689 P1717951 INFO Train loss: 0.259323
+2024-12-14 17:28:12,690 P1717951 INFO Evaluation @epoch 14 - batch 50: 
+2024-12-14 17:28:13,845 P1717951 INFO ===
+2024-12-14 17:28:13,846 P1717951 INFO [Metrics] AUC: 0.986730 - logloss: 0.131796
+2024-12-14 17:28:13,846 P1717951 INFO Save best model: monitor(max)=0.986730
+2024-12-14 17:28:14,031 P1717951 INFO ************ Epoch=14 end ************
+2024-12-14 17:28:18,350 P1717951 INFO Train loss: 0.232684
+2024-12-14 17:28:18,350 P1717951 INFO Evaluation @epoch 15 - batch 50: 
+2024-12-14 17:28:19,474 P1717951 INFO ===
+2024-12-14 17:28:19,474 P1717951 INFO [Metrics] AUC: 0.986844 - logloss: 0.133529
+2024-12-14 17:28:19,474 P1717951 INFO Save best model: monitor(max)=0.986844
+2024-12-14 17:28:19,661 P1717951 INFO ************ Epoch=15 end ************
+2024-12-14 17:28:23,879 P1717951 INFO Train loss: 0.216845
+2024-12-14 17:28:23,880 P1717951 INFO Evaluation @epoch 16 - batch 50: 
+2024-12-14 17:28:25,002 P1717951 INFO ===
+2024-12-14 17:28:25,002 P1717951 INFO [Metrics] AUC: 0.986543 - logloss: 0.137412
+2024-12-14 17:28:25,003 P1717951 INFO Monitor(max)=0.986543 STOP!
+2024-12-14 17:28:25,003 P1717951 INFO Reduce learning rate on plateau: 0.000010
+2024-12-14 17:28:25,222 P1717951 INFO ************ Epoch=16 end ************
+2024-12-14 17:28:29,626 P1717951 INFO Train loss: 0.199585
+2024-12-14 17:28:29,626 P1717951 INFO Evaluation @epoch 17 - batch 50: 
+2024-12-14 17:28:30,784 P1717951 INFO ===
+2024-12-14 17:28:30,784 P1717951 INFO [Metrics] AUC: 0.986607 - logloss: 0.138147
+2024-12-14 17:28:30,784 P1717951 INFO Monitor(max)=0.986607 STOP!
+2024-12-14 17:28:30,784 P1717951 INFO Reduce learning rate on plateau: 0.000001
+2024-12-14 17:28:30,784 P1717951 INFO ********* Epoch==17 early stop *********
+2024-12-14 17:28:30,962 P1717951 INFO Training finished.
+2024-12-14 17:28:30,963 P1717951 INFO Load best model: /mnt/public/lhh/code/model_zoo/QNN/QNN_torch/checkpoints/Frappe_x1_h5/QNN_T26_DeepFM_Frappe_019_9438810e.model
+2024-12-14 17:28:30,972 P1717951 INFO ****** Validation evaluation ******
+2024-12-14 17:28:32,285 P1717951 INFO ===
+2024-12-14 17:28:32,286 P1717951 INFO [Metrics] logloss: 0.133529 - AUC: 0.986844
+2024-12-14 17:28:32,388 P1717951 INFO ******** Test evaluation ********
+2024-12-14 17:28:32,389 P1717951 INFO Loading data...
+2024-12-14 17:28:32,389 P1717951 INFO Loading data from h5: ../../../data/Frappe_x1_h5/test.h5
+2024-12-14 17:28:32,402 P1717951 INFO Test samples: total/28860, blocks/1
+2024-12-14 17:28:32,402 P1717951 INFO Loading test data done.
+2024-12-14 17:28:33,522 P1717951 INFO ===
+2024-12-14 17:28:33,522 P1717951 INFO [Metrics] logloss: 0.136490 - AUC: 0.985985

@@ -1,0 +1,9 @@
+base_config: ./config/
+base_expid: QNN_T26_DeepFM_iPinYou
+dataset_id: iPinYou_x1_csv
+
+tuner_space:
+    model_root: './checkpoints/'
+    batch_size: 4096
+    num_row: [3, 4, 5]
+    num_layers: [3, 4]

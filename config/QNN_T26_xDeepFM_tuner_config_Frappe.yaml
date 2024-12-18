@@ -1,0 +1,11 @@
+base_config: ./config/
+base_expid: QNN_T26_xDeepFM_Frappe
+dataset_id: Frappe_x1_h5
+
+tuner_space:
+    model_root: './checkpoints/'
+    batch_size: 4096
+    num_heads: [1]
+    cin_hidden_units: [[64], [32], [32, 32], [64, 64]]
+    num_row: [2, 3, 4, 5, 6, 7, 8, 9, 10]
+    num_layers: [2, 3]

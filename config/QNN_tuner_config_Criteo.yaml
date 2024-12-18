@@ -1,0 +1,13 @@
+base_config: ./config/
+base_expid: QNN_Criteo
+dataset_id: Criteo_x4_10_h5
+
+tuner_space:
+    model_root: './checkpoints/'
+    batch_size: 10000
+    hidden_activations: [ ReLU, None ]
+    neuron_type: [ T1, T2, T6 ]
+    embedding_dim: [16]
+
+
+

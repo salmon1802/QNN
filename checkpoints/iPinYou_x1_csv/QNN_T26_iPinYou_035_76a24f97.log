@@ -1,0 +1,164 @@
+2024-11-23 03:13:06,943 P683861 INFO Params: {
+    "batch_norm": "True",
+    "batch_size": "4096",
+    "data_format": "csv",
+    "data_root": "../../../data/",
+    "dataset_id": "iPinYou_x1_csv",
+    "debug_mode": "False",
+    "early_stop_patience": "2",
+    "embedding_dim": "16",
+    "embedding_regularizer": "0.001",
+    "epochs": "100",
+    "eval_steps": "None",
+    "feature_cols": "[{'active': True, 'dtype': 'str', 'name': ['weekday', 'hour', 'IP', 'region', 'city', 'adexchange', 'domain', 'slotid', 'slotwidth', 'slotheight', 'slotvisibility', 'slotformat', 'creative', 'advertiser', 'useragent', 'slotprice'], 'type': 'categorical'}]",
+    "feature_config": "None",
+    "feature_specs": "None",
+    "gpu": "3",
+    "group_id": "None",
+    "label_col": "{'dtype': 'float', 'name': 'click'}",
+    "learning_rate": "0.001",
+    "loss": "binary_crossentropy",
+    "metrics": "['logloss', 'AUC']",
+    "min_categr_count": "2",
+    "model": "QNN_T26",
+    "model_id": "QNN_T26_iPinYou_035_76a24f97",
+    "model_root": "./checkpoints/",
+    "monitor": "{'AUC': 1, 'logloss': 0}",
+    "monitor_mode": "max",
+    "net_dropout": "0.1",
+    "net_regularizer": "0",
+    "num_heads": "4",
+    "num_layers": "4",
+    "num_row": "2",
+    "num_workers": "8",
+    "optimizer": "adam",
+    "pickle_feature_encoder": "True",
+    "save_best_only": "True",
+    "seed": "2024",
+    "shuffle": "True",
+    "task": "binary_classification",
+    "test_data": "../../../data/iPinYou/test.csv",
+    "train_data": "../../../data/iPinYou/train.csv",
+    "use_features": "None",
+    "valid_data": "../../../data/iPinYou/test.csv",
+    "verbose": "1"
+}
+2024-11-23 03:13:06,944 P683861 INFO Set up feature processor...
+2024-11-23 03:13:06,944 P683861 WARNING Skip rebuilding ../../../data/iPinYou_x1_csv/feature_map.json. Please delete it manually if rebuilding is required.
+2024-11-23 03:13:06,944 P683861 INFO Load feature_map from json: ../../../data/iPinYou_x1_csv/feature_map.json
+2024-11-23 03:13:06,944 P683861 INFO Set column index...
+2024-11-23 03:13:06,945 P683861 INFO Feature specs: {
+    "IP": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 585532, 'vocab_size': 585533}",
+    "adexchange": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 6, 'vocab_size': 7}",
+    "advertiser": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 10, 'vocab_size': 11}",
+    "city": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 371, 'vocab_size': 372}",
+    "creative": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 132, 'vocab_size': 133}",
+    "domain": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 28622, 'vocab_size': 28623}",
+    "hour": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 25, 'vocab_size': 26}",
+    "region": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 36, 'vocab_size': 37}",
+    "slotformat": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 5, 'vocab_size': 6}",
+    "slotheight": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 15, 'vocab_size': 16}",
+    "slotid": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 50906, 'vocab_size': 50907}",
+    "slotprice": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 6, 'vocab_size': 7}",
+    "slotvisibility": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 12, 'vocab_size': 13}",
+    "slotwidth": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 22, 'vocab_size': 23}",
+    "useragent": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 41, 'vocab_size': 42}",
+    "weekday": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 8, 'vocab_size': 9}"
+}
+2024-11-23 03:13:10,468 P683861 INFO Total number of parameters: 11182929.
+2024-11-23 03:13:10,468 P683861 INFO Loading data...
+2024-11-23 03:13:10,469 P683861 INFO Loading data from h5: ../../../data/iPinYou_x1_csv/train.h5
+2024-11-23 03:13:14,478 P683861 INFO Train samples: total/15395258, blocks/1
+2024-11-23 03:13:14,478 P683861 INFO Loading data from h5: ../../../data/iPinYou_x1_csv/valid.h5
+2024-11-23 03:13:15,621 P683861 INFO Validation samples: total/4100716, blocks/1
+2024-11-23 03:13:15,621 P683861 INFO Loading train and validation data done.
+2024-11-23 03:13:15,621 P683861 INFO Start training: 3759 batches/epoch
+2024-11-23 03:13:15,621 P683861 INFO ************ Epoch=1 start ************
+2024-11-23 03:16:24,138 P683861 INFO Train loss: 0.026233
+2024-11-23 03:16:24,138 P683861 INFO Evaluation @epoch 1 - batch 3759: 
+2024-11-23 03:16:33,949 P683861 INFO ===
+2024-11-23 03:16:33,949 P683861 INFO [Metrics] AUC: 0.740805 - logloss: 0.005662
+2024-11-23 03:16:33,951 P683861 INFO Save best model: monitor(max)=0.740805
+2024-11-23 03:16:34,134 P683861 INFO ************ Epoch=1 end ************
+2024-11-23 03:19:31,457 P683861 INFO Train loss: 0.018334
+2024-11-23 03:19:31,457 P683861 INFO Evaluation @epoch 2 - batch 3759: 
+2024-11-23 03:19:40,832 P683861 INFO ===
+2024-11-23 03:19:40,833 P683861 INFO [Metrics] AUC: 0.753084 - logloss: 0.005664
+2024-11-23 03:19:40,835 P683861 INFO Save best model: monitor(max)=0.753084
+2024-11-23 03:19:41,297 P683861 INFO ************ Epoch=2 end ************
+2024-11-23 03:22:39,785 P683861 INFO Train loss: 0.018189
+2024-11-23 03:22:39,785 P683861 INFO Evaluation @epoch 3 - batch 3759: 
+2024-11-23 03:22:49,983 P683861 INFO ===
+2024-11-23 03:22:49,983 P683861 INFO [Metrics] AUC: 0.752078 - logloss: 0.005632
+2024-11-23 03:22:49,985 P683861 INFO Monitor(max)=0.752078 STOP!
+2024-11-23 03:22:49,986 P683861 INFO Reduce learning rate on plateau: 0.000100
+2024-11-23 03:22:50,110 P683861 INFO ************ Epoch=3 end ************
+2024-11-23 03:25:50,007 P683861 INFO Train loss: 0.017561
+2024-11-23 03:25:50,007 P683861 INFO Evaluation @epoch 4 - batch 3759: 
+2024-11-23 03:25:59,644 P683861 INFO ===
+2024-11-23 03:25:59,644 P683861 INFO [Metrics] AUC: 0.776255 - logloss: 0.005561
+2024-11-23 03:25:59,646 P683861 INFO Save best model: monitor(max)=0.776255
+2024-11-23 03:26:00,093 P683861 INFO ************ Epoch=4 end ************
+2024-11-23 03:29:00,510 P683861 INFO Train loss: 0.017422
+2024-11-23 03:29:00,510 P683861 INFO Evaluation @epoch 5 - batch 3759: 
+2024-11-23 03:29:11,009 P683861 INFO ===
+2024-11-23 03:29:11,009 P683861 INFO [Metrics] AUC: 0.779700 - logloss: 0.005549
+2024-11-23 03:29:11,013 P683861 INFO Save best model: monitor(max)=0.779700
+2024-11-23 03:29:11,450 P683861 INFO ************ Epoch=5 end ************
+2024-11-23 03:32:13,964 P683861 INFO Train loss: 0.017359
+2024-11-23 03:32:13,965 P683861 INFO Evaluation @epoch 6 - batch 3759: 
+2024-11-23 03:32:23,812 P683861 INFO ===
+2024-11-23 03:32:23,812 P683861 INFO [Metrics] AUC: 0.783228 - logloss: 0.005527
+2024-11-23 03:32:23,816 P683861 INFO Save best model: monitor(max)=0.783228
+2024-11-23 03:32:24,357 P683861 INFO ************ Epoch=6 end ************
+2024-11-23 03:35:24,658 P683861 INFO Train loss: 0.017276
+2024-11-23 03:35:24,658 P683861 INFO Evaluation @epoch 7 - batch 3759: 
+2024-11-23 03:35:37,055 P683861 INFO ===
+2024-11-23 03:35:37,055 P683861 INFO [Metrics] AUC: 0.782564 - logloss: 0.005533
+2024-11-23 03:35:37,061 P683861 INFO Monitor(max)=0.782564 STOP!
+2024-11-23 03:35:37,062 P683861 INFO Reduce learning rate on plateau: 0.000010
+2024-11-23 03:35:37,194 P683861 INFO ************ Epoch=7 end ************
+2024-11-23 03:38:45,746 P683861 INFO Train loss: 0.017032
+2024-11-23 03:38:45,746 P683861 INFO Evaluation @epoch 8 - batch 3759: 
+2024-11-23 03:38:56,632 P683861 INFO ===
+2024-11-23 03:38:56,632 P683861 INFO [Metrics] AUC: 0.785238 - logloss: 0.005517
+2024-11-23 03:38:56,635 P683861 INFO Save best model: monitor(max)=0.785238
+2024-11-23 03:38:57,177 P683861 INFO ************ Epoch=8 end ************
+2024-11-23 03:42:14,224 P683861 INFO Train loss: 0.017051
+2024-11-23 03:42:14,224 P683861 INFO Evaluation @epoch 9 - batch 3759: 
+2024-11-23 03:42:24,981 P683861 INFO ===
+2024-11-23 03:42:24,981 P683861 INFO [Metrics] AUC: 0.785851 - logloss: 0.005516
+2024-11-23 03:42:24,986 P683861 INFO Save best model: monitor(max)=0.785851
+2024-11-23 03:42:25,499 P683861 INFO ************ Epoch=9 end ************
+2024-11-23 03:45:42,123 P683861 INFO Train loss: 0.016986
+2024-11-23 03:45:42,123 P683861 INFO Evaluation @epoch 10 - batch 3759: 
+2024-11-23 03:45:51,983 P683861 INFO ===
+2024-11-23 03:45:51,983 P683861 INFO [Metrics] AUC: 0.786308 - logloss: 0.005516
+2024-11-23 03:45:51,985 P683861 INFO Save best model: monitor(max)=0.786308
+2024-11-23 03:45:52,518 P683861 INFO ************ Epoch=10 end ************
+2024-11-23 03:49:05,090 P683861 INFO Train loss: 0.016988
+2024-11-23 03:49:05,090 P683861 INFO Evaluation @epoch 11 - batch 3759: 
+2024-11-23 03:49:15,454 P683861 INFO ===
+2024-11-23 03:49:15,455 P683861 INFO [Metrics] AUC: 0.785810 - logloss: 0.005517
+2024-11-23 03:49:15,457 P683861 INFO Monitor(max)=0.785810 STOP!
+2024-11-23 03:49:15,457 P683861 INFO Reduce learning rate on plateau: 0.000001
+2024-11-23 03:49:15,607 P683861 INFO ************ Epoch=11 end ************
+2024-11-23 03:52:30,322 P683861 INFO Train loss: 0.016856
+2024-11-23 03:52:30,322 P683861 INFO Evaluation @epoch 12 - batch 3759: 
+2024-11-23 03:52:40,456 P683861 INFO ===
+2024-11-23 03:52:40,456 P683861 INFO [Metrics] AUC: 0.785766 - logloss: 0.005517
+2024-11-23 03:52:40,461 P683861 INFO Monitor(max)=0.785766 STOP!
+2024-11-23 03:52:40,461 P683861 INFO Reduce learning rate on plateau: 0.000001
+2024-11-23 03:52:40,461 P683861 INFO ********* Epoch==12 early stop *********
+2024-11-23 03:52:40,607 P683861 INFO Training finished.
+2024-11-23 03:52:40,608 P683861 INFO Load best model: /mnt/public/lhh/code/model_zoo/QNN/QNN_torch/checkpoints/iPinYou_x1_csv/QNN_T26_iPinYou_035_76a24f97.model
+2024-11-23 03:52:40,639 P683861 INFO ****** Validation evaluation ******
+2024-11-23 03:52:50,588 P683861 INFO ===
+2024-11-23 03:52:50,589 P683861 INFO [Metrics] logloss: 0.005516 - AUC: 0.786308
+2024-11-23 03:52:50,642 P683861 INFO ******** Test evaluation ********
+2024-11-23 03:52:50,642 P683861 INFO Loading data...
+2024-11-23 03:52:50,642 P683861 INFO Loading data from h5: ../../../data/iPinYou_x1_csv/test.h5
+2024-11-23 03:52:51,733 P683861 INFO Test samples: total/4100716, blocks/1
+2024-11-23 03:52:51,733 P683861 INFO Loading test data done.
+2024-11-23 03:53:01,571 P683861 INFO ===
+2024-11-23 03:53:01,571 P683861 INFO [Metrics] logloss: 0.005516 - AUC: 0.786308

@@ -1,0 +1,7 @@
+base_config: ./config/
+base_expid: QNN_T26_KKBox
+dataset_id: KKBox_csv
+
+tuner_space:
+    model_root: './checkpoints/'
+    num_heads: [1, 2, 4, 8, 16]

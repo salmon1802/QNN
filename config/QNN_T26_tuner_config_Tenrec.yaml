@@ -1,0 +1,7 @@
+base_config: ./config/
+base_expid: QNN_T26_Tenrec
+dataset_id: Tenrec_x1
+
+tuner_space:
+    model_root: './checkpoints/'
+    num_row: [1, 2, 5, 10, 20]

@@ -1,0 +1,289 @@
+2024-12-14 16:38:06,274 P485863 INFO Params: {
+    "batch_norm": "True",
+    "batch_size": "4096",
+    "data_format": "csv",
+    "data_root": "../../../data/",
+    "dataset_id": "ML_1M_7_x1",
+    "debug_mode": "False",
+    "early_stop_patience": "2",
+    "embedding_dim": "16",
+    "embedding_regularizer": "0.01",
+    "epochs": "100",
+    "eval_steps": "None",
+    "feature_cols": "[{'active': True, 'dtype': 'str', 'name': ['UserID', 'Gender', 'Age', 'Occupation', 'MovieID', 'Release'], 'type': 'categorical'}, {'active': True, 'dtype': 'str', 'encoder': 'MaskedSumPooling', 'max_len': 5, 'name': 'Genres', 'splitter': '^', 'type': 'sequence'}]",
+    "feature_config": "None",
+    "feature_specs": "None",
+    "gpu": "1",
+    "group_id": "None",
+    "label_col": "{'dtype': 'float', 'name': 'Label'}",
+    "learning_rate": "0.001",
+    "loss": "binary_crossentropy",
+    "metrics": "['logloss', 'AUC']",
+    "min_categr_count": "1",
+    "model": "QNN_T26_DeepFM",
+    "model_id": "QNN_T26_DeepFM_ML_1M_007_55c71a0f",
+    "model_root": "./checkpoints/",
+    "monitor": "{'AUC': 1, 'logloss': 0}",
+    "monitor_mode": "max",
+    "net_dropout": "0.1",
+    "net_regularizer": "0",
+    "num_heads": "1",
+    "num_layers": "1",
+    "num_row": "4",
+    "num_workers": "8",
+    "optimizer": "adam",
+    "pickle_feature_encoder": "True",
+    "save_best_only": "True",
+    "seed": "2024",
+    "shuffle": "True",
+    "task": "binary_classification",
+    "test_data": "../../../data/ML_1M/test.csv",
+    "train_data": "../../../data/ML_1M/train.csv",
+    "use_features": "None",
+    "valid_data": "../../../data/ML_1M/valid.csv",
+    "verbose": "1"
+}
+2024-12-14 16:38:06,275 P485863 INFO Set up feature processor...
+2024-12-14 16:38:06,275 P485863 WARNING Skip rebuilding ../../../data/ML_1M_7_x1/feature_map.json. Please delete it manually if rebuilding is required.
+2024-12-14 16:38:06,275 P485863 INFO Load feature_map from json: ../../../data/ML_1M_7_x1/feature_map.json
+2024-12-14 16:38:06,275 P485863 INFO Set column index...
+2024-12-14 16:38:06,275 P485863 INFO Feature specs: {
+    "Age": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 8, 'vocab_size': 9}",
+    "Gender": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 3, 'vocab_size': 4}",
+    "Genres": "{'source': '', 'type': 'sequence', 'feature_encoder': 'layers.MaskedAveragePooling()', 'padding_idx': 0, 'oov_idx': 19, 'vocab_size': 20, 'max_len': 5}",
+    "MovieID": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 3642, 'vocab_size': 3643}",
+    "Occupation": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 22, 'vocab_size': 23}",
+    "Release": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 9, 'vocab_size': 10}",
+    "UserID": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 6041, 'vocab_size': 6042}"
+}
+2024-12-14 16:38:09,715 P485863 INFO Total number of parameters: 217401.
+2024-12-14 16:38:09,715 P485863 INFO Loading data...
+2024-12-14 16:38:09,716 P485863 INFO Loading data from h5: ../../../data/ML_1M_7_x1/train.h5
+2024-12-14 16:38:09,783 P485863 INFO Train samples: total/591209, blocks/1
+2024-12-14 16:38:09,783 P485863 INFO Loading data from h5: ../../../data/ML_1M_7_x1/valid.h5
+2024-12-14 16:38:09,790 P485863 INFO Validation samples: total/73901, blocks/1
+2024-12-14 16:38:09,791 P485863 INFO Loading train and validation data done.
+2024-12-14 16:38:09,791 P485863 INFO Start training: 145 batches/epoch
+2024-12-14 16:38:09,791 P485863 INFO ************ Epoch=1 start ************
+2024-12-14 16:38:18,467 P485863 INFO Train loss: 1.445976
+2024-12-14 16:38:18,467 P485863 INFO Evaluation @epoch 1 - batch 145: 
+2024-12-14 16:38:19,491 P485863 INFO ===
+2024-12-14 16:38:19,491 P485863 INFO [Metrics] AUC: 0.853505 - logloss: 0.385433
+2024-12-14 16:38:19,491 P485863 INFO Save best model: monitor(max)=0.853505
+2024-12-14 16:38:19,648 P485863 INFO ************ Epoch=1 end ************
+2024-12-14 16:38:28,743 P485863 INFO Train loss: 1.181861
+2024-12-14 16:38:28,743 P485863 INFO Evaluation @epoch 2 - batch 145: 
+2024-12-14 16:38:29,836 P485863 INFO ===
+2024-12-14 16:38:29,837 P485863 INFO [Metrics] AUC: 0.866662 - logloss: 0.353756
+2024-12-14 16:38:29,837 P485863 INFO Save best model: monitor(max)=0.866662
+2024-12-14 16:38:29,953 P485863 INFO ************ Epoch=2 end ************
+2024-12-14 16:38:38,944 P485863 INFO Train loss: 1.121823
+2024-12-14 16:38:38,944 P485863 INFO Evaluation @epoch 3 - batch 145: 
+2024-12-14 16:38:40,034 P485863 INFO ===
+2024-12-14 16:38:40,034 P485863 INFO [Metrics] AUC: 0.872270 - logloss: 0.344423
+2024-12-14 16:38:40,034 P485863 INFO Save best model: monitor(max)=0.872270
+2024-12-14 16:38:40,152 P485863 INFO ************ Epoch=3 end ************
+2024-12-14 16:38:49,228 P485863 INFO Train loss: 1.094285
+2024-12-14 16:38:49,229 P485863 INFO Evaluation @epoch 4 - batch 145: 
+2024-12-14 16:38:50,302 P485863 INFO ===
+2024-12-14 16:38:50,302 P485863 INFO [Metrics] AUC: 0.878477 - logloss: 0.337713
+2024-12-14 16:38:50,303 P485863 INFO Save best model: monitor(max)=0.878477
+2024-12-14 16:38:50,443 P485863 INFO ************ Epoch=4 end ************
+2024-12-14 16:38:59,621 P485863 INFO Train loss: 1.074723
+2024-12-14 16:38:59,621 P485863 INFO Evaluation @epoch 5 - batch 145: 
+2024-12-14 16:39:00,568 P485863 INFO ===
+2024-12-14 16:39:00,568 P485863 INFO [Metrics] AUC: 0.883213 - logloss: 0.332520
+2024-12-14 16:39:00,568 P485863 INFO Save best model: monitor(max)=0.883213
+2024-12-14 16:39:00,672 P485863 INFO ************ Epoch=5 end ************
+2024-12-14 16:39:09,971 P485863 INFO Train loss: 1.057666
+2024-12-14 16:39:09,971 P485863 INFO Evaluation @epoch 6 - batch 145: 
+2024-12-14 16:39:11,041 P485863 INFO ===
+2024-12-14 16:39:11,041 P485863 INFO [Metrics] AUC: 0.885529 - logloss: 0.328587
+2024-12-14 16:39:11,041 P485863 INFO Save best model: monitor(max)=0.885529
+2024-12-14 16:39:11,175 P485863 INFO ************ Epoch=6 end ************
+2024-12-14 16:39:20,245 P485863 INFO Train loss: 1.042528
+2024-12-14 16:39:20,246 P485863 INFO Evaluation @epoch 7 - batch 145: 
+2024-12-14 16:39:21,251 P485863 INFO ===
+2024-12-14 16:39:21,251 P485863 INFO [Metrics] AUC: 0.887549 - logloss: 0.325836
+2024-12-14 16:39:21,251 P485863 INFO Save best model: monitor(max)=0.887549
+2024-12-14 16:39:21,374 P485863 INFO ************ Epoch=7 end ************
+2024-12-14 16:39:30,068 P485863 INFO Train loss: 1.031472
+2024-12-14 16:39:30,068 P485863 INFO Evaluation @epoch 8 - batch 145: 
+2024-12-14 16:39:31,116 P485863 INFO ===
+2024-12-14 16:39:31,116 P485863 INFO [Metrics] AUC: 0.890246 - logloss: 0.323314
+2024-12-14 16:39:31,117 P485863 INFO Save best model: monitor(max)=0.890246
+2024-12-14 16:39:31,226 P485863 INFO ************ Epoch=8 end ************
+2024-12-14 16:39:41,290 P485863 INFO Train loss: 1.021217
+2024-12-14 16:39:41,290 P485863 INFO Evaluation @epoch 9 - batch 145: 
+2024-12-14 16:39:42,419 P485863 INFO ===
+2024-12-14 16:39:42,419 P485863 INFO [Metrics] AUC: 0.891435 - logloss: 0.320359
+2024-12-14 16:39:42,419 P485863 INFO Save best model: monitor(max)=0.891435
+2024-12-14 16:39:42,577 P485863 INFO ************ Epoch=9 end ************
+2024-12-14 16:39:52,991 P485863 INFO Train loss: 1.014742
+2024-12-14 16:39:52,992 P485863 INFO Evaluation @epoch 10 - batch 145: 
+2024-12-14 16:39:54,185 P485863 INFO ===
+2024-12-14 16:39:54,185 P485863 INFO [Metrics] AUC: 0.892376 - logloss: 0.319039
+2024-12-14 16:39:54,186 P485863 INFO Save best model: monitor(max)=0.892376
+2024-12-14 16:39:54,360 P485863 INFO ************ Epoch=10 end ************
+2024-12-14 16:40:04,447 P485863 INFO Train loss: 1.008057
+2024-12-14 16:40:04,448 P485863 INFO Evaluation @epoch 11 - batch 145: 
+2024-12-14 16:40:05,626 P485863 INFO ===
+2024-12-14 16:40:05,626 P485863 INFO [Metrics] AUC: 0.893524 - logloss: 0.317297
+2024-12-14 16:40:05,626 P485863 INFO Save best model: monitor(max)=0.893524
+2024-12-14 16:40:05,749 P485863 INFO ************ Epoch=11 end ************
+2024-12-14 16:40:14,476 P485863 INFO Train loss: 1.002298
+2024-12-14 16:40:14,477 P485863 INFO Evaluation @epoch 12 - batch 145: 
+2024-12-14 16:40:15,643 P485863 INFO ===
+2024-12-14 16:40:15,644 P485863 INFO [Metrics] AUC: 0.894940 - logloss: 0.315325
+2024-12-14 16:40:15,644 P485863 INFO Save best model: monitor(max)=0.894940
+2024-12-14 16:40:15,759 P485863 INFO ************ Epoch=12 end ************
+2024-12-14 16:40:25,359 P485863 INFO Train loss: 0.996325
+2024-12-14 16:40:25,359 P485863 INFO Evaluation @epoch 13 - batch 145: 
+2024-12-14 16:40:26,340 P485863 INFO ===
+2024-12-14 16:40:26,340 P485863 INFO [Metrics] AUC: 0.895298 - logloss: 0.314955
+2024-12-14 16:40:26,341 P485863 INFO Save best model: monitor(max)=0.895298
+2024-12-14 16:40:26,476 P485863 INFO ************ Epoch=13 end ************
+2024-12-14 16:40:36,217 P485863 INFO Train loss: 0.991614
+2024-12-14 16:40:36,217 P485863 INFO Evaluation @epoch 14 - batch 145: 
+2024-12-14 16:40:37,434 P485863 INFO ===
+2024-12-14 16:40:37,434 P485863 INFO [Metrics] AUC: 0.895311 - logloss: 0.314279
+2024-12-14 16:40:37,434 P485863 INFO Save best model: monitor(max)=0.895311
+2024-12-14 16:40:37,545 P485863 INFO ************ Epoch=14 end ************
+2024-12-14 16:40:47,861 P485863 INFO Train loss: 0.986110
+2024-12-14 16:40:47,862 P485863 INFO Evaluation @epoch 15 - batch 145: 
+2024-12-14 16:40:49,068 P485863 INFO ===
+2024-12-14 16:40:49,068 P485863 INFO [Metrics] AUC: 0.896145 - logloss: 0.313803
+2024-12-14 16:40:49,068 P485863 INFO Save best model: monitor(max)=0.896145
+2024-12-14 16:40:49,215 P485863 INFO ************ Epoch=15 end ************
+2024-12-14 16:40:59,511 P485863 INFO Train loss: 0.982953
+2024-12-14 16:40:59,511 P485863 INFO Evaluation @epoch 16 - batch 145: 
+2024-12-14 16:41:00,744 P485863 INFO ===
+2024-12-14 16:41:00,744 P485863 INFO [Metrics] AUC: 0.896995 - logloss: 0.312746
+2024-12-14 16:41:00,744 P485863 INFO Save best model: monitor(max)=0.896995
+2024-12-14 16:41:00,883 P485863 INFO ************ Epoch=16 end ************
+2024-12-14 16:41:11,142 P485863 INFO Train loss: 0.979699
+2024-12-14 16:41:11,142 P485863 INFO Evaluation @epoch 17 - batch 145: 
+2024-12-14 16:41:12,257 P485863 INFO ===
+2024-12-14 16:41:12,258 P485863 INFO [Metrics] AUC: 0.897672 - logloss: 0.311476
+2024-12-14 16:41:12,258 P485863 INFO Save best model: monitor(max)=0.897672
+2024-12-14 16:41:12,392 P485863 INFO ************ Epoch=17 end ************
+2024-12-14 16:41:20,578 P485863 INFO Train loss: 0.975222
+2024-12-14 16:41:20,589 P485863 INFO Evaluation @epoch 18 - batch 145: 
+2024-12-14 16:41:21,601 P485863 INFO ===
+2024-12-14 16:41:21,601 P485863 INFO [Metrics] AUC: 0.897890 - logloss: 0.311525
+2024-12-14 16:41:21,601 P485863 INFO Save best model: monitor(max)=0.897890
+2024-12-14 16:41:21,741 P485863 INFO ************ Epoch=18 end ************
+2024-12-14 16:41:30,497 P485863 INFO Train loss: 0.971821
+2024-12-14 16:41:30,498 P485863 INFO Evaluation @epoch 19 - batch 145: 
+2024-12-14 16:41:31,556 P485863 INFO ===
+2024-12-14 16:41:31,556 P485863 INFO [Metrics] AUC: 0.898116 - logloss: 0.310718
+2024-12-14 16:41:31,556 P485863 INFO Save best model: monitor(max)=0.898116
+2024-12-14 16:41:31,672 P485863 INFO ************ Epoch=19 end ************
+2024-12-14 16:41:40,113 P485863 INFO Train loss: 0.968519
+2024-12-14 16:41:40,113 P485863 INFO Evaluation @epoch 20 - batch 145: 
+2024-12-14 16:41:41,285 P485863 INFO ===
+2024-12-14 16:41:41,285 P485863 INFO [Metrics] AUC: 0.897480 - logloss: 0.311540
+2024-12-14 16:41:41,285 P485863 INFO Monitor(max)=0.897480 STOP!
+2024-12-14 16:41:41,285 P485863 INFO Reduce learning rate on plateau: 0.000100
+2024-12-14 16:41:41,404 P485863 INFO ************ Epoch=20 end ************
+2024-12-14 16:41:50,139 P485863 INFO Train loss: 0.918070
+2024-12-14 16:41:50,139 P485863 INFO Evaluation @epoch 21 - batch 145: 
+2024-12-14 16:41:51,229 P485863 INFO ===
+2024-12-14 16:41:51,236 P485863 INFO [Metrics] AUC: 0.904151 - logloss: 0.302199
+2024-12-14 16:41:51,236 P485863 INFO Save best model: monitor(max)=0.904151
+2024-12-14 16:41:51,380 P485863 INFO ************ Epoch=21 end ************
+2024-12-14 16:42:00,239 P485863 INFO Train loss: 0.887099
+2024-12-14 16:42:00,239 P485863 INFO Evaluation @epoch 22 - batch 145: 
+2024-12-14 16:42:01,381 P485863 INFO ===
+2024-12-14 16:42:01,382 P485863 INFO [Metrics] AUC: 0.906357 - logloss: 0.298889
+2024-12-14 16:42:01,382 P485863 INFO Save best model: monitor(max)=0.906357
+2024-12-14 16:42:01,506 P485863 INFO ************ Epoch=22 end ************
+2024-12-14 16:42:10,661 P485863 INFO Train loss: 0.872467
+2024-12-14 16:42:10,662 P485863 INFO Evaluation @epoch 23 - batch 145: 
+2024-12-14 16:42:11,718 P485863 INFO ===
+2024-12-14 16:42:11,718 P485863 INFO [Metrics] AUC: 0.907280 - logloss: 0.297606
+2024-12-14 16:42:11,718 P485863 INFO Save best model: monitor(max)=0.907280
+2024-12-14 16:42:11,853 P485863 INFO ************ Epoch=23 end ************
+2024-12-14 16:42:19,830 P485863 INFO Train loss: 0.862039
+2024-12-14 16:42:19,830 P485863 INFO Evaluation @epoch 24 - batch 145: 
+2024-12-14 16:42:20,738 P485863 INFO ===
+2024-12-14 16:42:20,738 P485863 INFO [Metrics] AUC: 0.907525 - logloss: 0.297222
+2024-12-14 16:42:20,738 P485863 INFO Save best model: monitor(max)=0.907525
+2024-12-14 16:42:20,845 P485863 INFO ************ Epoch=24 end ************
+2024-12-14 16:42:29,533 P485863 INFO Train loss: 0.854907
+2024-12-14 16:42:29,534 P485863 INFO Evaluation @epoch 25 - batch 145: 
+2024-12-14 16:42:30,592 P485863 INFO ===
+2024-12-14 16:42:30,593 P485863 INFO [Metrics] AUC: 0.907650 - logloss: 0.297139
+2024-12-14 16:42:30,593 P485863 INFO Save best model: monitor(max)=0.907650
+2024-12-14 16:42:30,731 P485863 INFO ************ Epoch=25 end ************
+2024-12-14 16:42:39,846 P485863 INFO Train loss: 0.849304
+2024-12-14 16:42:39,847 P485863 INFO Evaluation @epoch 26 - batch 145: 
+2024-12-14 16:42:40,959 P485863 INFO ===
+2024-12-14 16:42:40,959 P485863 INFO [Metrics] AUC: 0.907671 - logloss: 0.297295
+2024-12-14 16:42:40,959 P485863 INFO Save best model: monitor(max)=0.907671
+2024-12-14 16:42:41,088 P485863 INFO ************ Epoch=26 end ************
+2024-12-14 16:42:50,197 P485863 INFO Train loss: 0.844173
+2024-12-14 16:42:50,198 P485863 INFO Evaluation @epoch 27 - batch 145: 
+2024-12-14 16:42:51,250 P485863 INFO ===
+2024-12-14 16:42:51,250 P485863 INFO [Metrics] AUC: 0.907621 - logloss: 0.297345
+2024-12-14 16:42:51,250 P485863 INFO Monitor(max)=0.907621 STOP!
+2024-12-14 16:42:51,250 P485863 INFO Reduce learning rate on plateau: 0.000010
+2024-12-14 16:42:51,370 P485863 INFO ************ Epoch=27 end ************
+2024-12-14 16:43:00,611 P485863 INFO Train loss: 0.831335
+2024-12-14 16:43:00,612 P485863 INFO Evaluation @epoch 28 - batch 145: 
+2024-12-14 16:43:01,685 P485863 INFO ===
+2024-12-14 16:43:01,685 P485863 INFO [Metrics] AUC: 0.907774 - logloss: 0.297150
+2024-12-14 16:43:01,685 P485863 INFO Save best model: monitor(max)=0.907774
+2024-12-14 16:43:01,806 P485863 INFO ************ Epoch=28 end ************
+2024-12-14 16:43:11,083 P485863 INFO Train loss: 0.828083
+2024-12-14 16:43:11,084 P485863 INFO Evaluation @epoch 29 - batch 145: 
+2024-12-14 16:43:12,097 P485863 INFO ===
+2024-12-14 16:43:12,097 P485863 INFO [Metrics] AUC: 0.907772 - logloss: 0.297332
+2024-12-14 16:43:12,097 P485863 INFO Monitor(max)=0.907772 STOP!
+2024-12-14 16:43:12,098 P485863 INFO Reduce learning rate on plateau: 0.000001
+2024-12-14 16:43:12,230 P485863 INFO ************ Epoch=29 end ************
+2024-12-14 16:43:21,333 P485863 INFO Train loss: 0.826188
+2024-12-14 16:43:21,333 P485863 INFO Evaluation @epoch 30 - batch 145: 
+2024-12-14 16:43:22,388 P485863 INFO ===
+2024-12-14 16:43:22,388 P485863 INFO [Metrics] AUC: 0.907782 - logloss: 0.297224
+2024-12-14 16:43:22,388 P485863 INFO Save best model: monitor(max)=0.907782
+2024-12-14 16:43:22,505 P485863 INFO ************ Epoch=30 end ************
+2024-12-14 16:43:31,093 P485863 INFO Train loss: 0.825652
+2024-12-14 16:43:31,094 P485863 INFO Evaluation @epoch 31 - batch 145: 
+2024-12-14 16:43:32,076 P485863 INFO ===
+2024-12-14 16:43:32,076 P485863 INFO [Metrics] AUC: 0.907776 - logloss: 0.297299
+2024-12-14 16:43:32,076 P485863 INFO Monitor(max)=0.907776 STOP!
+2024-12-14 16:43:32,076 P485863 INFO Reduce learning rate on plateau: 0.000001
+2024-12-14 16:43:32,239 P485863 INFO ************ Epoch=31 end ************
+2024-12-14 16:43:41,723 P485863 INFO Train loss: 0.825259
+2024-12-14 16:43:41,724 P485863 INFO Evaluation @epoch 32 - batch 145: 
+2024-12-14 16:43:42,788 P485863 INFO ===
+2024-12-14 16:43:42,788 P485863 INFO [Metrics] AUC: 0.907788 - logloss: 0.297203
+2024-12-14 16:43:42,789 P485863 INFO Save best model: monitor(max)=0.907788
+2024-12-14 16:43:42,916 P485863 INFO ************ Epoch=32 end ************
+2024-12-14 16:43:51,792 P485863 INFO Train loss: 0.825288
+2024-12-14 16:43:51,793 P485863 INFO Evaluation @epoch 33 - batch 145: 
+2024-12-14 16:43:52,896 P485863 INFO ===
+2024-12-14 16:43:52,897 P485863 INFO [Metrics] AUC: 0.907773 - logloss: 0.297283
+2024-12-14 16:43:52,897 P485863 INFO Monitor(max)=0.907773 STOP!
+2024-12-14 16:43:52,897 P485863 INFO Reduce learning rate on plateau: 0.000001
+2024-12-14 16:43:53,000 P485863 INFO ************ Epoch=33 end ************
+2024-12-14 16:44:02,107 P485863 INFO Train loss: 0.824991
+2024-12-14 16:44:02,107 P485863 INFO Evaluation @epoch 34 - batch 145: 
+2024-12-14 16:44:03,105 P485863 INFO ===
+2024-12-14 16:44:03,105 P485863 INFO [Metrics] AUC: 0.907779 - logloss: 0.297265
+2024-12-14 16:44:03,105 P485863 INFO Monitor(max)=0.907779 STOP!
+2024-12-14 16:44:03,105 P485863 INFO Reduce learning rate on plateau: 0.000001
+2024-12-14 16:44:03,105 P485863 INFO ********* Epoch==34 early stop *********
+2024-12-14 16:44:03,218 P485863 INFO Training finished.
+2024-12-14 16:44:03,218 P485863 INFO Load best model: /mnt/public/lhh/code/model_zoo/QNN/QNN_torch/checkpoints/ML_1M_7_x1/QNN_T26_DeepFM_ML_1M_007_55c71a0f.model
+2024-12-14 16:44:03,223 P485863 INFO ****** Validation evaluation ******
+2024-12-14 16:44:04,349 P485863 INFO ===
+2024-12-14 16:44:04,349 P485863 INFO [Metrics] logloss: 0.297203 - AUC: 0.907788
+2024-12-14 16:44:04,407 P485863 INFO ******** Test evaluation ********
+2024-12-14 16:44:04,408 P485863 INFO Loading data...
+2024-12-14 16:44:04,408 P485863 INFO Loading data from h5: ../../../data/ML_1M_7_x1/test.h5
+2024-12-14 16:44:04,416 P485863 INFO Test samples: total/73902, blocks/1
+2024-12-14 16:44:04,417 P485863 INFO Loading test data done.
+2024-12-14 16:44:05,451 P485863 INFO ===
+2024-12-14 16:44:05,452 P485863 INFO [Metrics] logloss: 0.296643 - AUC: 0.908203

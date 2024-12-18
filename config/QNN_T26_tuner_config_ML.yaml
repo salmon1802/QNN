@@ -1,0 +1,8 @@
+base_config: ./config/
+base_expid: QNN_T26_ML_1M
+dataset_id: ML_1M_7_x1
+
+tuner_space:
+    model_root: './checkpoints/'
+    batch_size: 4096
+    num_heads: [1, 2, 4, 8, 16]

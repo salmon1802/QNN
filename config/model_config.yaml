@@ -1,0 +1,458 @@
+Base:
+    model_root: './checkpoints/'
+    num_workers: 8
+    verbose: 1
+    early_stop_patience: 2
+    pickle_feature_encoder: True
+    save_best_only: True
+    eval_steps: null
+    debug_mode: False
+    group_id: null
+    use_features: null
+    feature_specs: null
+    feature_config: null
+
+QNN_T26_Tenrec: # This is a config template
+    model: QNN_T26
+    dataset_id: Tenrec_x1
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 1.e-5
+    net_regularizer: 0
+    batch_size: 10000
+    embedding_dim: 16
+    num_layers: 1
+    num_row: 4
+    net_dropout: 0.1
+    num_heads: 1
+    batch_norm: True
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': 0}
+    monitor_mode: 'max'
+
+QNN_Criteo: # This is a config template
+    model: QNN
+    dataset_id: Criteo_x4_10_h5
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 1.e-5
+    net_regularizer: 0
+    batch_size: 10000
+    embedding_dim: 16
+    num_cross_layers: 3
+    net_dropout: 0.1
+    hidden_activations: ReLU
+    neuron_type: T6
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': 0}
+    monitor_mode: 'max'
+
+QNN_T26_Criteo: # This is a config template
+    model: QNN_T26
+    dataset_id: Criteo_x4_10_h5
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 1.e-5
+    net_regularizer: 0
+    batch_size: 10000
+    embedding_dim: 16
+    num_layers: 4
+    num_row: 5
+    net_dropout: 0.1
+    num_heads: 1
+    batch_norm: False
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': 0}
+    monitor_mode: 'max'
+
+QNN_T26_ML_1M: # This is a config template
+    model: QNN_T26
+    dataset_id: ML_1M_7_x1
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 1.e-2
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 16
+    num_layers: 1
+    num_row: 4
+    net_dropout: 0.1
+    num_heads: 4
+    batch_norm: True
+    epochs: 100
+    shuffle: True
+    seed: 2023
+    monitor: {'AUC': 1, 'logloss': 0}
+    monitor_mode: 'max'
+
+QNN_T26_MLP_ML_1M: # This is a config template
+    model: QNN_T26_MLP
+    dataset_id: ML_1M_7_x1
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 1.e-2
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 16
+    hidden_units: [400, 400]
+    num_layers: 1
+    num_row: 4
+    net_dropout: 0.1
+    num_heads: 4
+    batch_norm: True
+    epochs: 100
+    shuffle: True
+    seed: 2023
+    monitor: {'AUC': 1, 'logloss': 0}
+    monitor_mode: 'max'
+
+QNN_T26_xDeepFM_ML_1M: # This is a config template
+    model: QNN_T26_xDeepFM
+    dataset_id: ML_1M_7_x1
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 1.e-2
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 16
+    cin_hidden_units: [64, 64]
+    num_layers: 1
+    num_row: 4
+    net_dropout: 0.1
+    num_heads: 4
+    batch_norm: True
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': 0}
+    monitor_mode: 'max'
+
+QNN_T26_DeepFM_ML_1M: # This is a config template
+    model: QNN_T26_DeepFM
+    dataset_id: ML_1M_7_x1
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 1.e-2
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 16
+    num_layers: 1
+    num_row: 4
+    net_dropout: 0.1
+    num_heads: 4
+    batch_norm: True
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': 0}
+    monitor_mode: 'max'
+
+QNN_T26_DCNv2_ML_1M: # This is a config template
+    model: QNN_T26_DCNv2
+    dataset_id: ML_1M_7_x1
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 1.e-2
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 16
+    num_layers: 1
+    num_cross_layers: 2
+    num_row: 4
+    net_dropout: 0.1
+    num_heads: 4
+    batch_norm: True
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': 0}
+    monitor_mode: 'max'
+
+QNN_T26_Frappe: # This is a config template add net_reg re-run
+    model: QNN_T26v3
+    dataset_id: Frappe_x1_h5
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 0.1
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 16
+    num_layers: 2
+    num_row: 13
+    net_dropout: 0.1
+    num_heads: 1
+    batch_norm: True
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': 0}
+    monitor_mode: 'max'
+
+QNN_T26_MLP_Frappe: # This is a config template add net_reg re-run
+    model: QNN_T26_MLP
+    dataset_id: Frappe_x1_h5
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 0.05
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 16
+    num_layers: 2
+    hidden_units: [400, 400, 400]
+    num_row: 13
+    net_dropout: 0.1
+    num_heads: 1
+    batch_norm: True
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': 0}
+    monitor_mode: 'max'
+
+QNN_T26_DCNv2_Frappe: # This is a config template add net_reg re-run
+    model: QNN_T26_DCNv2
+    dataset_id: Frappe_x1_h5
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 0.1
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 16
+    num_layers: 2
+    num_cross_layers: 2
+    num_row: 8
+    net_dropout: 0.1
+    num_heads: 1
+    batch_norm: True
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': 0}
+    monitor_mode: 'max'
+
+QNN_T26_DeepFM_Frappe: # This is a config template add net_reg re-run
+    model: QNN_T26_DeepFM
+    dataset_id: Frappe_x1_h5
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 0.1
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 16
+    num_layers: 2
+    num_row: 13
+    net_dropout: 0.1
+    num_heads: 1
+    batch_norm: True
+    epochs: 100
+    shuffle: True
+    seed: 2023
+    monitor: {'AUC': 1, 'logloss': 0}
+    monitor_mode: 'max'
+
+QNN_T26_xDeepFM_Frappe: # This is a config template add net_reg re-run
+    model: QNN_T26_xDeepFM
+    dataset_id: Frappe_x1_h5
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 0.1
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 16
+    num_layers: 2
+    cin_hidden_units: [64, 64]
+    num_row: 8
+    net_dropout: 0.1
+    num_heads: 1
+    batch_norm: True
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': 0}
+    monitor_mode: 'max'
+
+QNN_T26_iPinYou: # This is a config template
+    model: QNN_T26
+    dataset_id: iPinYou_x1_csv
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 1.e-3
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 16
+    num_layers: 4
+    num_row: 2
+    net_dropout: 0.1
+    num_heads: 4
+    batch_norm: True
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': 0}
+    monitor_mode: 'max'
+
+QNN_T26_MLP_iPinYou: # This is a config template
+    model: QNN_T26_MLP
+    dataset_id: iPinYou_x1_csv
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 1.e-3
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 16
+    hidden_units: [400, 400, 400]
+    num_layers: 4
+    num_row: 2
+    net_dropout: 0.1
+    num_heads: 4
+    batch_norm: True
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': 0}
+    monitor_mode: 'max'
+
+QNN_T26_xDeepFM_iPinYou: # This is a config template
+    model: QNN_T26_xDeepFM
+    dataset_id: iPinYou_x1_csv
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 1.e-3
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 16
+    num_layers: 4
+    cin_hidden_units: [64]
+    num_row: 2
+    net_dropout: 0.1
+    num_heads: 4
+    batch_norm: True
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': 0}
+    monitor_mode: 'max'
+
+QNN_T26_DCNv2_iPinYou: # This is a config template
+    model: QNN_T26_DCNv2
+    dataset_id: iPinYou_x1_csv
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 1.e-3
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 16
+    num_layers: 4
+    num_cross_layers: 2
+    num_row: 2
+    net_dropout: 0.1
+    num_heads: 4
+    batch_norm: True
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': 0}
+    monitor_mode: 'max'
+
+QNN_T26_DeepFM_iPinYou: # This is a config template
+    model: QNN_T26_DeepFM
+    dataset_id: iPinYou_x1_csv
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 1.e-3
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 16
+    num_layers: 4
+    num_row: 2
+    net_dropout: 0.1
+    num_heads: 4
+    batch_norm: True
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': 0}
+    monitor_mode: 'max'
+
+QNN_T26_KKBox: # This is a config template
+    model: QNN_T26
+    dataset_id: KKBox_csv
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 5.e-4
+    net_regularizer: 0
+    batch_size: 10000
+    embedding_dim: 128
+    num_layers: 3
+    num_row: 3
+    net_dropout: 0.1
+    num_heads: 16
+    batch_norm: True
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': 0}
+    monitor_mode: 'max'

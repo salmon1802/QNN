@@ -1,0 +1,8 @@
+base_config: ./config/
+base_expid: QNN_T26_Frappe
+dataset_id: Frappe_x1_h5
+
+tuner_space:
+    model_root: './checkpoints/'
+    batch_size: 4096
+    num_row: [1, 3, 5, 10, 20]
