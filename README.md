@@ -26,6 +26,4 @@ Get the result from ./checkpoints
 This implementation is based on FuxiCTR and BARS. Thanks for their sharing and contribution.  
 BARS: https://github.com/openbenchmark  
 FuxiCTR: https://github.com/xue-pai/FuxiCTR
-```
-
 
