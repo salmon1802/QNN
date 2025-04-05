@@ -54,20 +54,47 @@ class QNN_T26(BaseModel):
         self.reset_parameters()
         self.model_to_device()
 
+    # def forward(self, inputs):
+    #     X = self.get_inputs(inputs)
+    #     feature_emb = self.embedding_layer(X, dynamic_emb_dim=True)
+    #     y_pred = self.qnn(feature_emb)
+    #     y_pred = self.output_activation(y_pred)
+    #     return_dict = {"y_pred": y_pred}
+    #     return return_dict
+
+    # def add_loss(self, inputs):
+    #     return_dict1 = self.forward(inputs)
+    #     return_dict2 = self.forward(inputs)
+    #     y_true = self.get_labels(inputs)
+    #     y_pred1 = return_dict1["y_pred"]
+    #     y_pred2 = return_dict2["y_pred"]
+    #     y_pred = (y_pred1 + y_pred2) * 0.5
+    #     loss = self.loss_fn(y_pred, y_true, reduction='mean')
+    #     loss1 = self.loss_fn(y_pred1, y_pred.detach(), reduction='mean')
+    #     loss2 = self.loss_fn(y_pred2, y_pred.detach(), reduction='mean')
+    #     loss = loss + loss1 + loss2
+    #     return loss
+
+    # More efficient implementation of SE Loss
     def forward(self, inputs):
         X = self.get_inputs(inputs)
         feature_emb = self.embedding_layer(X, dynamic_emb_dim=True)
-        y_pred = self.qnn(feature_emb)
-        y_pred = self.output_activation(y_pred)
-        return_dict = {"y_pred": y_pred}
+        if self.training:
+            y_pred1 = self.qnn(feature_emb)
+            y_pred2 = self.qnn(feature_emb)
+            return_dict = {"y_pred1": self.output_activation(y_pred1),
+                           "y_pred2": self.output_activation(y_pred2)}
+        else:
+            y_pred = self.qnn(feature_emb)
+            y_pred = self.output_activation(y_pred)
+            return_dict = {"y_pred": y_pred}
         return return_dict
 
     def add_loss(self, inputs):
-        return_dict1 = self.forward(inputs)
-        return_dict2 = self.forward(inputs)
+        return_dict = self.forward(inputs)
         y_true = self.get_labels(inputs)
-        y_pred1 = return_dict1["y_pred"]
-        y_pred2 = return_dict2["y_pred"]
+        y_pred1 = return_dict["y_pred1"]
+        y_pred2 = return_dict["y_pred2"]
         y_pred = (y_pred1 + y_pred2) * 0.5
         loss = self.loss_fn(y_pred, y_true, reduction='mean')
         loss1 = self.loss_fn(y_pred1, y_pred.detach(), reduction='mean')
