@@ -1,5 +1,8 @@
 If you have any questions, feel free to ask!  :)  
 *To ensure the correctness of the experimental results, please run QNN in FuxiCTR==2.0.1 or the latest version.*
+
+🔥Another version of QNN, which is based on user sequence modeling, is available at https://github.com/salmon1802/QIN.
+
 # Revisiting Feature Interactions from the Perspective of Quadratic Neural Networks for Click-through Rate Prediction
 
 ## Model Overview
