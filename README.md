@@ -34,3 +34,15 @@ This implementation is based on FuxiCTR and BARS. Thanks for their sharing and c
 BARS: https://github.com/openbenchmark  
 FuxiCTR: https://github.com/xue-pai/FuxiCTR
 
+### Citation
+If you find our code helpful for your research, please cite the following paper:
+
+```bibtex
+@article{li2025QNN,
+  title={Revisiting Feature Interactions from the Perspective of Quadratic Neural Networks for Click-through Rate Prediction},
+  author={Li, Honghao and Zhang, Yiwen and Zhang, Yi and Sang, Lei and Zhu, Jieming},
+  journal={arXiv preprint arXiv:2505.17999},
+  year={2025}
+}
+```
+
