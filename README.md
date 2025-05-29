@@ -3,6 +3,8 @@ If you have any questions, feel free to ask!  :)
 
 🔥Another version of QNN, which is based on user sequence modeling, is available at https://github.com/salmon1802/QIN.
 
+🔥 KDD'25 accepted
+
 ## Revisiting Feature Interactions from the Perspective of Quadratic Neural Networks for Click-through Rate Prediction
 
 ### Model Overview
